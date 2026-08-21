@@ -11,18 +11,41 @@ export default function Cadastro() {
   const [password, setPassword] = useState('')
   const [error, setError] = useState(null)
   const [loadingSubmit, setLoadingSubmit] = useState(false)
+  const [confirmarEmail, setConfirmarEmail] = useState(false)
 
   async function handleSubmit(e) {
     e.preventDefault()
     setError(null)
     setLoadingSubmit(true)
-    const { error } = await signUp({ email, password, fullName })
+    const { error, needsEmailConfirmation } = await signUp({ email, password, fullName })
     setLoadingSubmit(false)
     if (error) {
       setError(traduzErro(error.message))
       return
     }
+    if (needsEmailConfirmation) {
+      setConfirmarEmail(true)
+      return
+    }
     navigate('/painel')
+  }
+
+  if (confirmarEmail) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-[var(--color-bg)] px-6">
+        <div className="w-full max-w-sm text-center">
+          <div className="flex justify-center mb-8"><Logo /></div>
+          <div className="bg-white rounded-3xl border border-[var(--color-indigo-light)] p-7 shadow-sm">
+            <div className="text-4xl mb-3">📬</div>
+            <h1 className="font-display font-bold text-xl text-[var(--color-indigo)] mb-2">Confirme seu e-mail</h1>
+            <p className="text-sm text-[var(--color-ink)]/60">
+              Enviamos um link de confirmação para <strong>{email}</strong>. Clique nele para ativar sua conta e depois entre normalmente.
+            </p>
+            <Link to="/entrar" className="inline-block mt-5 font-semibold text-[var(--color-esmeralda-dark)]">Ir para o login</Link>
+          </div>
+        </div>
+      </div>
+    )
   }
 
   return (
