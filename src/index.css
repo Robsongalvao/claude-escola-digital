@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Baloo 2", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --color-esmeralda: #00b368;
+  --color-esmeralda-dark: #00834d;
+  --color-esmeralda-light: #e3f9ee;
+
+  --color-ambar: #ffb100;
+  --color-ambar-dark: #d68f00;
+  --color-ambar-light: #fff4dd;
+
+  --color-indigo: #2a1f6b;
+  --color-indigo-dark: #1a1245;
+  --color-indigo-light: #ece9fb;
+
+  --color-coral: #ff6b5e;
+
+  --color-bg: #fbfaf7;
+  --color-ink: #241b3d;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono-num {
+  font-family: var(--font-mono);
+}
+
+/* Trilha de progresso - elemento de assinatura */
+.trilha-path {
+  stroke-dasharray: 8 10;
+  stroke-linecap: round;
+}
