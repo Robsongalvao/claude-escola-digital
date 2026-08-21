@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import Logo from '../components/Logo'
 import { useAuth } from '../context/AuthContext'
 import { supabase } from '../lib/supabaseClient'
@@ -7,6 +8,7 @@ const AVATARES = ['🦁', '🐼', '🦊', '🐸', '🐧', '🦉', '🐢', '🦄'
 
 export default function Painel() {
   const { profile, signOut } = useAuth()
+  const navigate = useNavigate()
   const [students, setStudents] = useState([])
   const [loadingList, setLoadingList] = useState(true)
   const [showForm, setShowForm] = useState(false)
@@ -56,11 +58,12 @@ export default function Painel() {
         ) : (
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
             {students.map((s) => (
-              <div key={s.id} className="rounded-2xl bg-white border border-[var(--color-indigo-light)] p-5">
+              <button key={s.id} onClick={() => navigate(`/aluno/${s.id}`)}
+                className="text-left rounded-2xl bg-white border border-[var(--color-indigo-light)] p-5 hover:shadow-md hover:-translate-y-0.5 transition">
                 <div className="text-4xl mb-2">{s.avatar_url || '🦁'}</div>
                 <div className="font-display font-bold text-[var(--color-ink)]">{s.name}</div>
                 <div className="text-xs text-[var(--color-ink)]/50 mt-1">Nível {s.level} · {s.xp_total} XP</div>
-              </div>
+              </button>
             ))}
           </div>
         )}
