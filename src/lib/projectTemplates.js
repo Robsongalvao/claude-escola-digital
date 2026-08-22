@@ -34,6 +34,21 @@ export const PROJECT_TEMPLATES = {
       { db: 'social_post_text', label: 'Uma frase de compromisso com você mesmo(a)', type: 'textarea', placeholder: 'Escreva uma frase motivacional para o futuro' },
     ],
   },
+  'informatica-do-zero': {
+    emoji: '🖥️',
+    title: 'Projeto Final: Meu Primeiro Documento Digital',
+    subtitle: 'Você aprendeu o básico da informática. Agora é hora de criar!',
+    showProfitCalc: false,
+    submitLabel: 'Concluir curso e gerar certificado 🎓',
+    fields: [
+      { db: 'business_name', label: 'Título do seu documento', type: 'text', placeholder: 'Ex: Meu animal favorito' },
+      { db: 'product_service', label: 'Parágrafo principal do documento', type: 'textarea', placeholder: 'Escreva o conteúdo principal' },
+      { db: 'problem_solved', label: 'Por que você escolheu esse tema', type: 'textarea', placeholder: 'O que te interessa nesse assunto?' },
+      { db: 'marketing_strategy', label: 'Título da sua apresentação (slides)', type: 'text', placeholder: 'Um título curto para os slides' },
+      { db: 'service_approach', label: '3 pontos principais da apresentação', type: 'textarea', placeholder: 'Liste os pontos que você colocaria em cada slide' },
+      { db: 'social_post_text', label: 'Frase de conclusão', type: 'textarea', placeholder: 'Como você fecharia sua apresentação?' },
+    ],
+  },
 }
 
 export const DEFAULT_TEMPLATE = PROJECT_TEMPLATES['educacao-financeira-empreendedorismo']
