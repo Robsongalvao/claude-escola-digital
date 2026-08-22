@@ -9,7 +9,7 @@ import { ACHIEVEMENT_BY_MODULE_TITLE } from '../lib/achievementsMap'
 const STEPS = ['introducao', 'explicacao', 'atividade', 'quiz', 'resultado']
 
 export default function Aula() {
-  const { studentId, lessonId } = useParams()
+  const { studentId, courseSlug, lessonId } = useParams()
   const navigate = useNavigate()
   const [step, setStep] = useState(0)
   const [lesson, setLesson] = useState(null)
@@ -87,7 +87,7 @@ export default function Aula() {
   return (
     <div className="min-h-screen bg-[var(--color-bg)]">
       <header className="max-w-2xl mx-auto flex items-center justify-between px-6 py-6">
-        <button onClick={() => navigate(`/aluno/${studentId}`)} className="text-sm font-semibold text-[var(--color-indigo)]">← Trilha</button>
+        <button onClick={() => navigate(`/aluno/${studentId}/curso/${courseSlug}`)} className="text-sm font-semibold text-[var(--color-indigo)]">← Trilha</button>
         <Logo size="sm" />
       </header>
 
@@ -149,7 +149,7 @@ export default function Aula() {
               </div>
             )}
 
-            <button onClick={() => navigate(`/aluno/${studentId}`)} className="w-full py-3 rounded-full font-display font-bold bg-[var(--color-esmeralda)] text-white hover:bg-[var(--color-esmeralda-dark)] transition">
+            <button onClick={() => navigate(`/aluno/${studentId}/curso/${courseSlug}`)} className="w-full py-3 rounded-full font-display font-bold bg-[var(--color-esmeralda)] text-white hover:bg-[var(--color-esmeralda-dark)] transition">
               Voltar para a trilha
             </button>
           </div>

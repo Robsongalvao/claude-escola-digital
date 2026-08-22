@@ -7,6 +7,7 @@ import Login from './pages/Login'
 import Cadastro from './pages/Cadastro'
 import Painel from './pages/Painel'
 import TrilhaAluno from './pages/TrilhaAluno'
+import CursosAluno from './pages/CursosAluno'
 import Aula from './pages/Aula'
 import ProjetoFinal from './pages/ProjetoFinal'
 import Certificado from './pages/Certificado'
@@ -35,12 +36,20 @@ export default function App() {
             path="/aluno/:studentId"
             element={
               <RotaProtegida>
+                <CursosAluno />
+              </RotaProtegida>
+            }
+          />
+          <Route
+            path="/aluno/:studentId/curso/:courseSlug"
+            element={
+              <RotaProtegida>
                 <TrilhaAluno />
               </RotaProtegida>
             }
           />
           <Route
-            path="/aluno/:studentId/aula/:lessonId"
+            path="/aluno/:studentId/curso/:courseSlug/aula/:lessonId"
             element={
               <RotaProtegida>
                 <Aula />
@@ -48,7 +57,7 @@ export default function App() {
             }
           />
           <Route
-            path="/aluno/:studentId/projeto-final"
+            path="/aluno/:studentId/curso/:courseSlug/projeto-final"
             element={
               <RotaProtegida>
                 <ProjetoFinal />
@@ -56,7 +65,7 @@ export default function App() {
             }
           />
           <Route
-            path="/aluno/:studentId/certificado"
+            path="/aluno/:studentId/curso/:courseSlug/certificado"
             element={
               <RotaProtegida>
                 <Certificado />

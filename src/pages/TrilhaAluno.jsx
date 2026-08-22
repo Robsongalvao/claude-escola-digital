@@ -4,16 +4,17 @@ import Logo from '../components/Logo'
 import { supabase } from '../lib/supabaseClient'
 
 export default function TrilhaAluno() {
-  const { studentId } = useParams()
+  const { studentId, courseSlug } = useParams()
   const navigate = useNavigate()
   const [student, setStudent] = useState(null)
+  const [courseTitle, setCourseTitle] = useState('')
   const [modules, setModules] = useState([])
   const [progressByLesson, setProgressByLesson] = useState({})
   const [courseId, setCourseId] = useState(null)
   const [projectSubmitted, setProjectSubmitted] = useState(false)
   const [loading, setLoading] = useState(true)
 
-  useEffect(() => { load() }, [studentId])
+  useEffect(() => { load() }, [studentId, courseSlug])
 
   async function load() {
     setLoading(true)
@@ -23,11 +24,12 @@ export default function TrilhaAluno() {
     const { data: course } = await supabase
       .from('courses')
       .select('id, title')
-      .eq('slug', 'educacao-financeira-empreendedorismo')
+      .eq('slug', courseSlug)
       .single()
 
     if (course) {
       setCourseId(course.id)
+      setCourseTitle(course.title)
       const { data: mods } = await supabase
         .from('modules')
         .select('id, title, description, order_index, lessons(id, title, xp_reward, order_index)')
@@ -56,7 +58,7 @@ export default function TrilhaAluno() {
   return (
     <div className="min-h-screen bg-[var(--color-bg)]">
       <header className="max-w-3xl mx-auto flex items-center justify-between px-6 py-6">
-        <button onClick={() => navigate('/painel')} className="text-sm font-semibold text-[var(--color-indigo)]">← Voltar</button>
+        <button onClick={() => navigate(`/aluno/${studentId}`)} className="text-sm font-semibold text-[var(--color-indigo)]">← Meus cursos</button>
         <Logo size="sm" />
       </header>
 
@@ -69,7 +71,7 @@ export default function TrilhaAluno() {
           </div>
         </div>
 
-        <h2 className="font-display font-bold text-lg text-[var(--color-indigo)] mb-4">💰 Educação Financeira e Empreendedorismo</h2>
+        <h2 className="font-display font-bold text-lg text-[var(--color-indigo)] mb-4">{courseTitle}</h2>
 
         <ol className="space-y-3">
           {modules.map((mod, idx) => {
@@ -86,7 +88,7 @@ export default function TrilhaAluno() {
               <li key={mod.id}>
                 <button
                   disabled={bloqueado || !lesson}
-                  onClick={() => navigate(`/aluno/${studentId}/aula/${lesson.id}`)}
+                  onClick={() => navigate(`/aluno/${studentId}/curso/${courseSlug}/aula/${lesson.id}`)}
                   className={`w-full text-left flex items-center gap-4 rounded-2xl border p-4 transition ${
                     bloqueado
                       ? 'border-[var(--color-indigo-light)] bg-white/50 opacity-50 cursor-not-allowed'
@@ -121,7 +123,7 @@ export default function TrilhaAluno() {
               <li>
                 <button
                   disabled={bloqueado}
-                  onClick={() => navigate(projectSubmitted ? `/aluno/${studentId}/certificado` : `/aluno/${studentId}/projeto-final`)}
+                  onClick={() => navigate(projectSubmitted ? `/aluno/${studentId}/curso/${courseSlug}/certificado` : `/aluno/${studentId}/curso/${courseSlug}/projeto-final`)}
                   className={`w-full text-left flex items-center gap-4 rounded-2xl border-2 p-4 transition ${
                     bloqueado
                       ? 'border-[var(--color-indigo-light)] bg-white/50 opacity-50 cursor-not-allowed'

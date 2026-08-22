@@ -1,0 +1,39 @@
+// Cada curso tem um projeto final com campos diferentes, mas reaproveitam as
+// mesmas colunas da tabela student_projects (que é genérica o suficiente).
+export const PROJECT_TEMPLATES = {
+  'educacao-financeira-empreendedorismo': {
+    emoji: '🚀',
+    title: 'Projeto Final: Meu Primeiro Negócio',
+    subtitle: 'Você aprendeu, praticou e planejou. Agora é hora de criar!',
+    showProfitCalc: true,
+    submitLabel: 'Concluir curso e gerar certificado 🎓',
+    fields: [
+      { db: 'business_name', label: 'Nome do negócio', type: 'text', placeholder: 'Ex: Doces da Ana' },
+      { db: 'product_service', label: 'Produto ou serviço', type: 'text', placeholder: 'O que você vai oferecer?' },
+      { db: 'target_audience', label: 'Público-alvo', type: 'text', placeholder: 'Quem vai comprar de você?' },
+      { db: 'problem_solved', label: 'Qual problema ele resolve', type: 'textarea', placeholder: 'Que necessidade ou desejo isso atende?' },
+      { db: 'cost', label: 'Custo (R$)', type: 'number', placeholder: '0.00' },
+      { db: 'sale_price', label: 'Preço de venda (R$)', type: 'number', placeholder: '0.00' },
+      { db: 'marketing_strategy', label: 'Estratégia de divulgação', type: 'textarea', placeholder: 'Como as pessoas vão saber do seu negócio?' },
+      { db: 'service_approach', label: 'Forma de atendimento', type: 'textarea', placeholder: 'Como você vai tratar seus clientes?' },
+      { db: 'social_post_text', label: 'Publicação para rede social (fictícia)', type: 'textarea', placeholder: 'Escreva um post de apresentação do seu negócio' },
+    ],
+  },
+  'inteligencia-desenvolvimento-pessoal': {
+    emoji: '🌱',
+    title: 'Projeto Final: Meu Plano de Evolução',
+    subtitle: 'Você aprendeu sobre si mesmo. Agora é hora de traçar seu caminho!',
+    showProfitCalc: false,
+    submitLabel: 'Concluir curso e gerar certificado 🎓',
+    fields: [
+      { db: 'business_name', label: 'Um objetivo pessoal que você quer alcançar', type: 'text', placeholder: 'Ex: Ficar mais confiante para falar em público' },
+      { db: 'product_service', label: 'O que você já sabe fazer bem hoje', type: 'textarea', placeholder: 'Seus pontos fortes' },
+      { db: 'problem_solved', label: 'O que você quer melhorar', type: 'textarea', placeholder: 'Seus pontos a desenvolver' },
+      { db: 'marketing_strategy', label: 'Pequenas ações para chegar lá', type: 'textarea', placeholder: 'O que você vai fazer, passo a passo?' },
+      { db: 'service_approach', label: 'Como você vai acompanhar sua evolução', type: 'textarea', placeholder: 'Como você vai saber se está progredindo?' },
+      { db: 'social_post_text', label: 'Uma frase de compromisso com você mesmo(a)', type: 'textarea', placeholder: 'Escreva uma frase motivacional para o futuro' },
+    ],
+  },
+}
+
+export const DEFAULT_TEMPLATE = PROJECT_TEMPLATES['educacao-financeira-empreendedorismo']
