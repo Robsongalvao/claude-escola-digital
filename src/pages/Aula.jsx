@@ -4,7 +4,7 @@ import Logo from '../components/Logo'
 import ActivityRenderer from '../components/activities/ActivityRenderer'
 import QuizRunner from '../components/QuizRunner'
 import { supabase } from '../lib/supabaseClient'
-import { ACHIEVEMENT_BY_MODULE_TITLE, TOTAL_MODULES, FINAL_ACHIEVEMENT_CODE } from '../lib/achievementsMap'
+import { ACHIEVEMENT_BY_MODULE_TITLE } from '../lib/achievementsMap'
 
 const STEPS = ['introducao', 'explicacao', 'atividade', 'quiz', 'resultado']
 
@@ -72,15 +72,6 @@ export default function Aula() {
       if (ach) {
         const { error } = await supabase.from('student_achievements').insert({ student_id: studentId, achievement_id: ach.id })
         if (!error) desbloqueadas.push(code)
-      }
-    }
-
-    const { count } = await supabase.from('student_progress').select('*', { count: 'exact', head: true }).eq('student_id', studentId).eq('status', 'concluido')
-    if (count >= TOTAL_MODULES) {
-      const { data: finalAch } = await supabase.from('achievements').select('id').eq('code', FINAL_ACHIEVEMENT_CODE).single()
-      if (finalAch) {
-        const { error } = await supabase.from('student_achievements').insert({ student_id: studentId, achievement_id: finalAch.id })
-        if (!error) desbloqueadas.push(FINAL_ACHIEVEMENT_CODE)
       }
     }
 

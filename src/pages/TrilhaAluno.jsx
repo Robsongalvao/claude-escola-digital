@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useParams, useNavigate, Link } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import Logo from '../components/Logo'
 import { supabase } from '../lib/supabaseClient'
 
@@ -9,6 +9,8 @@ export default function TrilhaAluno() {
   const [student, setStudent] = useState(null)
   const [modules, setModules] = useState([])
   const [progressByLesson, setProgressByLesson] = useState({})
+  const [courseId, setCourseId] = useState(null)
+  const [projectSubmitted, setProjectSubmitted] = useState(false)
   const [loading, setLoading] = useState(true)
 
   useEffect(() => { load() }, [studentId])
@@ -25,12 +27,16 @@ export default function TrilhaAluno() {
       .single()
 
     if (course) {
+      setCourseId(course.id)
       const { data: mods } = await supabase
         .from('modules')
         .select('id, title, description, order_index, lessons(id, title, xp_reward, order_index)')
         .eq('course_id', course.id)
         .order('order_index')
       setModules(mods || [])
+
+      const { data: proj } = await supabase.from('student_projects').select('id').eq('student_id', studentId).eq('course_id', course.id).maybeSingle()
+      setProjectSubmitted(!!proj)
     }
 
     const { data: progress } = await supabase
@@ -103,6 +109,44 @@ export default function TrilhaAluno() {
               </li>
             )
           })}
+
+          {(() => {
+            const todosConcluidos = modules.length > 0 && modules.every((m) => {
+              const l = m.lessons?.[0]
+              return l && progressByLesson[l.id]?.status === 'concluido'
+            })
+            const bloqueado = !todosConcluidos
+
+            return (
+              <li>
+                <button
+                  disabled={bloqueado}
+                  onClick={() => navigate(projectSubmitted ? `/aluno/${studentId}/certificado` : `/aluno/${studentId}/projeto-final`)}
+                  className={`w-full text-left flex items-center gap-4 rounded-2xl border-2 p-4 transition ${
+                    bloqueado
+                      ? 'border-[var(--color-indigo-light)] bg-white/50 opacity-50 cursor-not-allowed'
+                      : projectSubmitted
+                      ? 'border-[var(--color-ambar)] bg-[var(--color-ambar-light)]'
+                      : 'border-dashed border-[var(--color-ambar)] bg-white hover:shadow-md'
+                  }`}
+                >
+                  <div className={`w-10 h-10 rounded-full flex items-center justify-center text-lg shrink-0 ${
+                    projectSubmitted ? 'bg-[var(--color-ambar)]' : bloqueado ? 'bg-[var(--color-indigo-light)]' : 'bg-[var(--color-ambar-light)]'
+                  }`}>
+                    {projectSubmitted ? '🎓' : bloqueado ? '🔒' : '🚀'}
+                  </div>
+                  <div className="flex-1">
+                    <div className="font-display font-semibold text-[var(--color-ink)]">
+                      {projectSubmitted ? 'Ver certificado' : 'Projeto Final: Meu Primeiro Negócio'}
+                    </div>
+                    <div className="text-xs text-[var(--color-ink)]/50">
+                      {projectSubmitted ? 'Parabéns, curso concluído!' : 'Junte tudo o que aprendeu e conclua o curso'}
+                    </div>
+                  </div>
+                </button>
+              </li>
+            )
+          })()}
         </ol>
       </main>
     </div>

@@ -8,6 +8,8 @@ import Cadastro from './pages/Cadastro'
 import Painel from './pages/Painel'
 import TrilhaAluno from './pages/TrilhaAluno'
 import Aula from './pages/Aula'
+import ProjetoFinal from './pages/ProjetoFinal'
+import Certificado from './pages/Certificado'
 import AdminLayout from './pages/admin/AdminLayout'
 import AdminDashboard from './pages/admin/AdminDashboard'
 import AdminCursos from './pages/admin/AdminCursos'
@@ -42,6 +44,22 @@ export default function App() {
             element={
               <RotaProtegida>
                 <Aula />
+              </RotaProtegida>
+            }
+          />
+          <Route
+            path="/aluno/:studentId/projeto-final"
+            element={
+              <RotaProtegida>
+                <ProjetoFinal />
+              </RotaProtegida>
+            }
+          />
+          <Route
+            path="/aluno/:studentId/certificado"
+            element={
+              <RotaProtegida>
+                <Certificado />
               </RotaProtegida>
             }
           />
