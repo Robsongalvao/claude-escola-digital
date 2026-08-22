@@ -1,18 +1,17 @@
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Logo from '../components/Logo'
-
-const MODULOS = [
-  { emoji: '💰', titulo: 'Entendendo o Dinheiro' },
-  { emoji: '🤔', titulo: 'Necessidade ou Desejo?' },
-  { emoji: '📊', titulo: 'Orçamento' },
-  { emoji: '🎯', titulo: 'Planejamento' },
-  { emoji: '🐷', titulo: 'Poupança' },
-  { emoji: '🌱', titulo: 'Consumo Consciente' },
-  { emoji: '🏪', titulo: 'Meu Primeiro Negócio' },
-  { emoji: '🏷️', titulo: 'Precificação' },
-]
+import { supabase } from '../lib/supabaseClient'
 
 export default function Landing() {
+  const [courses, setCourses] = useState([])
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    supabase.from('courses').select('*').eq('is_published', true).order('order_index')
+      .then(({ data }) => { setCourses(data || []); setLoading(false) })
+  }, [])
+
   return (
     <div className="min-h-screen bg-[var(--color-bg)]">
       <header className="max-w-6xl mx-auto flex items-center justify-between px-6 py-6">
@@ -36,8 +35,8 @@ export default function Landing() {
               o amanhã.
             </h1>
             <p className="mt-5 text-lg text-[var(--color-ink)]/70 max-w-md">
-              Uma escola digital onde crianças e adolescentes aprendem educação financeira e
-              empreendedorismo brincando, praticando e criando seu primeiro negócio de verdade.
+              Uma escola digital onde crianças e adolescentes aprendem sobre dinheiro, empreendedorismo
+              e desenvolvimento pessoal brincando, praticando e criando projetos de verdade.
             </p>
             <div className="mt-8 flex gap-3">
               <Link to="/cadastro" className="px-6 py-3 rounded-full font-display font-bold bg-[var(--color-ambar)] text-[var(--color-indigo-dark)] hover:bg-[var(--color-ambar-dark)] transition shadow-lg shadow-[var(--color-ambar)]/30">
@@ -58,7 +57,7 @@ export default function Landing() {
               />
               {[
                 { x: 40, y: 30, emoji: '💰' },
-                { x: 100, y: 120, emoji: '🤔' },
+                { x: 100, y: 120, emoji: '🧠' },
                 { x: 90, y: 220, emoji: '🐷' },
                 { x: 250, y: 280, emoji: '🏪' },
                 { x: 160, y: 350, emoji: '🏆' },
@@ -74,20 +73,26 @@ export default function Landing() {
 
         <section className="py-14">
           <h2 className="font-display font-bold text-2xl text-[var(--color-indigo)] mb-1">Nossos Cursos</h2>
-          <p className="text-[var(--color-ink)]/60 mb-8">📚 Educação Financeira e Empreendedorismo — disponível agora</p>
+          <p className="text-[var(--color-ink)]/60 mb-8">Uma trilha de aprendizado que cresce com o aluno</p>
 
-          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
-            {MODULOS.map((m) => (
-              <div key={m.titulo} className="rounded-2xl bg-white border border-[var(--color-indigo-light)] p-5 hover:shadow-md hover:-translate-y-0.5 transition">
-                <div className="text-3xl mb-3">{m.emoji}</div>
-                <div className="font-display font-semibold text-[var(--color-ink)]">{m.titulo}</div>
+          {loading ? (
+            <p className="text-[var(--color-ink)]/40">Carregando cursos...</p>
+          ) : (
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+              {courses.map((c) => (
+                <div key={c.id} className="rounded-2xl bg-white border border-[var(--color-indigo-light)] p-5 hover:shadow-md hover:-translate-y-0.5 transition">
+                  <div className="text-3xl mb-3">{c.icon}</div>
+                  <div className="font-display font-semibold text-[var(--color-ink)]">{c.title}</div>
+                  <div className="text-xs text-[var(--color-ink)]/50 mt-1">{c.description}</div>
+                </div>
+              ))}
+
+              <div className="rounded-2xl border-2 border-dashed border-[var(--color-indigo-light)] p-5 flex flex-col items-center justify-center text-center text-[var(--color-ink)]/40">
+                <div className="text-2xl mb-1">🔒</div>
+                <div className="text-sm font-display font-semibold">Novos cursos em breve</div>
               </div>
-            ))}
-          </div>
-
-          <div className="mt-4 rounded-2xl border-2 border-dashed border-[var(--color-indigo-light)] p-5 text-center text-[var(--color-ink)]/50 font-display font-semibold">
-            🔒 Novos cursos em breve
-          </div>
+            </div>
+          )}
         </section>
       </main>
 
