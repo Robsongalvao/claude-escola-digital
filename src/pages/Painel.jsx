@@ -29,6 +29,9 @@ export default function Painel() {
       <header className="max-w-5xl mx-auto flex items-center justify-between px-6 py-6">
         <Logo size="sm" />
         <div className="flex items-center gap-4">
+          {profile && ['admin', 'professor'].includes(profile.role) && (
+            <button onClick={() => navigate('/admin')} className="text-sm font-semibold text-[var(--color-ambar-dark)]">Painel admin</button>
+          )}
           <span className="text-sm text-[var(--color-ink)]/60">Olá, {profile?.full_name?.split(' ')[0]}</span>
           <button onClick={signOut} className="text-sm font-semibold text-[var(--color-coral)]">Sair</button>
         </div>
