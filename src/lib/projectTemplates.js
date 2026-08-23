@@ -64,6 +64,21 @@ export const PROJECT_TEMPLATES = {
       { db: 'social_post_text', label: 'Meu compromisso de segurança digital', type: 'textarea', placeholder: 'Escreva uma frase de compromisso' },
     ],
   },
+  'inteligencia-artificial-para-criancas': {
+    emoji: '🤖',
+    title: 'Projeto Final: Meu Primeiro Projeto com IA',
+    subtitle: 'Você aprendeu a usar IA com criatividade e responsabilidade. Hora de criar algo!',
+    showProfitCalc: false,
+    submitLabel: 'Concluir curso e gerar certificado 🎓',
+    fields: [
+      { db: 'business_name', label: 'Nome do meu projeto com IA', type: 'text', placeholder: 'Ex: Minha história do dragão medroso' },
+      { db: 'product_service', label: 'O que eu pedi para a IA me ajudar a criar', type: 'textarea', placeholder: 'Descreva o que você pediu, com ajuda de um responsável' },
+      { db: 'problem_solved', label: 'Como eu verifiquei se a informação estava correta', type: 'textarea', placeholder: 'Que fontes você usou para checar?' },
+      { db: 'marketing_strategy', label: 'O que a IA fez bem nesse projeto', type: 'textarea', placeholder: 'O que funcionou?' },
+      { db: 'service_approach', label: 'O que eu mudaria ou melhoraria', type: 'textarea', placeholder: 'O que você ajustou com suas próprias ideias?' },
+      { db: 'social_post_text', label: 'Uma coisa que aprendi sobre usar IA com responsabilidade', type: 'textarea', placeholder: 'Escreva sua reflexão final' },
+    ],
+  },
 }
 
 export const DEFAULT_TEMPLATE = PROJECT_TEMPLATES['educacao-financeira-empreendedorismo']

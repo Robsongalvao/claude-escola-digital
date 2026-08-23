@@ -31,6 +31,14 @@ export const ACHIEVEMENT_BY_MODULE_TITLE = {
   'Cyberbullying: Respeito Também Online': ['gentileza_online'],
   'Fake News: Nem Tudo que Circula é Verdade': ['verificador_de_fatos'],
   'Tempo de Tela e Uso Responsável': ['equilibrio_digital'],
+  'O que é Inteligência Artificial?': ['explorador_de_ia'],
+  'Onde Encontro IA no Meu Dia a Dia': ['cacador_de_ia'],
+  'Como Conversar Bem com uma IA': ['comunicador_com_ia'],
+  'IA que Cria: Textos e Imagens': ['criador_com_ia'],
+  'A IA Pode Errar: Verificando Informações': ['checador_de_ia'],
+  'Criatividade com IA: Inventando Histórias': ['contador_de_historias_ia'],
+  'Recomendações: Como a IA Sugere Coisas pra Mim': ['curioso_das_recomendacoes'],
+  'Usando IA com Responsabilidade e Segurança': ['ia_com_responsabilidade'],
 }
 
 export const TOTAL_MODULES = 12
@@ -41,4 +49,5 @@ export const FINAL_ACHIEVEMENT_BY_COURSE_SLUG = {
   'inteligencia-desenvolvimento-pessoal': 'explorador_da_evolucao',
   'informatica-do-zero': 'mestre_da_informatica',
   'seguranca-na-internet': 'guardiao_digital',
+  'inteligencia-artificial-para-criancas': 'jovem_especialista_ia',
 }
