@@ -79,6 +79,21 @@ export const PROJECT_TEMPLATES = {
       { db: 'social_post_text', label: 'Uma coisa que aprendi sobre usar IA com responsabilidade', type: 'textarea', placeholder: 'Escreva sua reflexão final' },
     ],
   },
+  'programacao-para-criancas': {
+    emoji: '🎮',
+    title: 'Projeto Final: Meu Primeiro Jogo',
+    subtitle: 'Você aprendeu lógica de programação. Agora é hora de planejar seu próprio jogo!',
+    showProfitCalc: false,
+    submitLabel: 'Concluir curso e gerar certificado 🎓',
+    fields: [
+      { db: 'business_name', label: 'Nome do meu jogo', type: 'text', placeholder: 'Ex: Caça-Estrelas' },
+      { db: 'product_service', label: 'Objetivo do jogador', type: 'textarea', placeholder: 'O que o jogador precisa fazer para vencer?' },
+      { db: 'problem_solved', label: 'Regras principais (o que faz ganhar ou perder)', type: 'textarea', placeholder: 'Descreva as condições de vitória e derrota' },
+      { db: 'marketing_strategy', label: 'Que eventos ou ações o jogador pode fazer', type: 'textarea', placeholder: 'Ex: apertar uma tecla para pular' },
+      { db: 'service_approach', label: 'Que variáveis o jogo precisa guardar', type: 'textarea', placeholder: 'Ex: pontos, vidas, tempo' },
+      { db: 'social_post_text', label: 'O que mais gostei de planejar nesse jogo', type: 'textarea', placeholder: 'Escreva sua reflexão final' },
+    ],
+  },
 }
 
 export const DEFAULT_TEMPLATE = PROJECT_TEMPLATES['educacao-financeira-empreendedorismo']

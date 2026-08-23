@@ -39,6 +39,14 @@ export const ACHIEVEMENT_BY_MODULE_TITLE = {
   'Criatividade com IA: Inventando Histórias': ['contador_de_historias_ia'],
   'Recomendações: Como a IA Sugere Coisas pra Mim': ['curioso_das_recomendacoes'],
   'Usando IA com Responsabilidade e Segurança': ['ia_com_responsabilidade'],
+  'O que é Programação?': ['programador_iniciante'],
+  'Algoritmos: A Receita que o Computador Segue': ['mestre_dos_algoritmos'],
+  'Sequência e Instruções': ['organizador_de_instrucoes'],
+  'Condições: Se Isso, Então Aquilo': ['mestre_das_condicoes'],
+  'Repetições: Fazendo a Mesma Coisa Várias Vezes': ['mestre_das_repeticoes'],
+  'Variáveis: Guardando Informações': ['guardiao_de_variaveis'],
+  'Eventos: Quando Algo Acontece': ['cacador_de_eventos'],
+  'Lógica de Jogos: Planejando Meu Primeiro Jogo': ['planejador_de_jogos'],
 }
 
 export const TOTAL_MODULES = 12
@@ -50,4 +58,5 @@ export const FINAL_ACHIEVEMENT_BY_COURSE_SLUG = {
   'informatica-do-zero': 'mestre_da_informatica',
   'seguranca-na-internet': 'guardiao_digital',
   'inteligencia-artificial-para-criancas': 'jovem_especialista_ia',
+  'programacao-para-criancas': 'pequeno_programador',
 }
