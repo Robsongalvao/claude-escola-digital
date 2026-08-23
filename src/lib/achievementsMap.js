@@ -47,6 +47,14 @@ export const ACHIEVEMENT_BY_MODULE_TITLE = {
   'Variáveis: Guardando Informações': ['guardiao_de_variaveis'],
   'Eventos: Quando Algo Acontece': ['cacador_de_eventos'],
   'Lógica de Jogos: Planejando Meu Primeiro Jogo': ['planejador_de_jogos'],
+  'O que é Criatividade?': ['mente_criativa'],
+  'Cores: A Linguagem Silenciosa': ['mestre_das_cores'],
+  'Formas e Composição': ['arquiteto_de_formas'],
+  'Contraste: Fazendo Coisas se Destacarem': ['mestre_do_contraste'],
+  'Tipografia: A Voz das Letras': ['tipografo'],
+  'Desenho: Ideias que Ganham Forma': ['desenhista'],
+  'Identidade Visual e Logotipo': ['criador_de_marca'],
+  'Criando um Cartaz': ['cartazista'],
 }
 
 export const TOTAL_MODULES = 12
@@ -59,4 +67,5 @@ export const FINAL_ACHIEVEMENT_BY_COURSE_SLUG = {
   'seguranca-na-internet': 'guardiao_digital',
   'inteligencia-artificial-para-criancas': 'jovem_especialista_ia',
   'programacao-para-criancas': 'pequeno_programador',
+  'criatividade-e-design': 'designer_criativo',
 }

@@ -94,6 +94,21 @@ export const PROJECT_TEMPLATES = {
       { db: 'social_post_text', label: 'O que mais gostei de planejar nesse jogo', type: 'textarea', placeholder: 'Escreva sua reflexão final' },
     ],
   },
+  'criatividade-e-design': {
+    emoji: '🎨',
+    title: 'Projeto Final: Minha Identidade Visual',
+    subtitle: 'Você aprendeu cores, formas e tipografia. Agora é hora de criar sua própria marca!',
+    showProfitCalc: false,
+    submitLabel: 'Concluir curso e gerar certificado 🎓',
+    fields: [
+      { db: 'business_name', label: 'Nome da minha marca ou projeto pessoal', type: 'text', placeholder: 'Ex: Estúdio da Ana' },
+      { db: 'product_service', label: 'Cores escolhidas e o que elas representam', type: 'textarea', placeholder: 'Descreva as cores e a sensação que passam' },
+      { db: 'problem_solved', label: 'Ideia do logotipo', type: 'textarea', placeholder: 'Descreva em palavras como seria o símbolo' },
+      { db: 'marketing_strategy', label: 'Frase ou slogan', type: 'text', placeholder: 'Uma frase curta que representa o projeto' },
+      { db: 'service_approach', label: 'Descrição do cartaz que você criaria', type: 'textarea', placeholder: 'Título, cor principal, elemento central' },
+      { db: 'social_post_text', label: 'O que essa identidade visual comunica sobre mim', type: 'textarea', placeholder: 'Escreva sua reflexão final' },
+    ],
+  },
 }
 
 export const DEFAULT_TEMPLATE = PROJECT_TEMPLATES['educacao-financeira-empreendedorismo']
