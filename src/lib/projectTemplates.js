@@ -49,6 +49,21 @@ export const PROJECT_TEMPLATES = {
       { db: 'social_post_text', label: 'Frase de conclusão', type: 'textarea', placeholder: 'Como você fecharia sua apresentação?' },
     ],
   },
+  'seguranca-na-internet': {
+    emoji: '🔐',
+    title: 'Projeto Final: Meu Manual de Segurança Digital',
+    subtitle: 'Você aprendeu a se proteger. Agora é hora de registrar suas próprias regras!',
+    showProfitCalc: false,
+    submitLabel: 'Concluir curso e gerar certificado 🎓',
+    fields: [
+      { db: 'business_name', label: 'Título do meu manual', type: 'text', placeholder: 'Ex: Guia de Segurança da Ana' },
+      { db: 'product_service', label: '3 regras de senha segura que vou seguir', type: 'textarea', placeholder: 'Liste suas regras pessoais' },
+      { db: 'problem_solved', label: 'O que eu faço se um desconhecido tentar falar comigo', type: 'textarea', placeholder: 'Escreva seu plano de ação' },
+      { db: 'marketing_strategy', label: 'O que eu nunca vou compartilhar online', type: 'textarea', placeholder: 'Liste informações que você vai proteger' },
+      { db: 'service_approach', label: 'Como vou agir se ver cyberbullying', type: 'textarea', placeholder: 'Descreva sua atitude' },
+      { db: 'social_post_text', label: 'Meu compromisso de segurança digital', type: 'textarea', placeholder: 'Escreva uma frase de compromisso' },
+    ],
+  },
 }
 
 export const DEFAULT_TEMPLATE = PROJECT_TEMPLATES['educacao-financeira-empreendedorismo']
