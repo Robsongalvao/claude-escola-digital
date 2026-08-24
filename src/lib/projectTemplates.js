@@ -139,6 +139,21 @@ export const PROJECT_TEMPLATES = {
       { db: 'social_post_text', label: 'Por que isso importa para você', type: 'textarea', placeholder: 'Escreva sua reflexão final' },
     ],
   },
+  'matematica-na-vida-real': {
+    emoji: '🧳',
+    title: 'Projeto Final: Minha Viagem Planejada',
+    subtitle: 'Você aprendeu porcentagem, medidas e gráficos. Hora de planejar uma viagem de verdade!',
+    showProfitCalc: false,
+    submitLabel: 'Concluir curso e gerar certificado 🎓',
+    fields: [
+      { db: 'business_name', label: 'Destino da viagem', type: 'text', placeholder: 'Ex: Praia de Ubatuba' },
+      { db: 'product_service', label: 'Orçamento total e como será dividido', type: 'textarea', placeholder: 'Transporte, alimentação, hospedagem' },
+      { db: 'problem_solved', label: 'Distância e tempo estimado de viagem', type: 'text', placeholder: 'Ex: 200 km, 3 horas' },
+      { db: 'marketing_strategy', label: 'Meio de transporte escolhido', type: 'text', placeholder: 'Carro, ônibus, avião...' },
+      { db: 'service_approach', label: 'Quantidade de pessoas e como isso afeta os custos', type: 'textarea', placeholder: 'Descreva a divisão de gastos' },
+      { db: 'social_post_text', label: 'Uma curiosidade matemática que você usou no planejamento', type: 'textarea', placeholder: 'Escreva sua reflexão final' },
+    ],
+  },
 }
 
 export const DEFAULT_TEMPLATE = PROJECT_TEMPLATES['educacao-financeira-empreendedorismo']

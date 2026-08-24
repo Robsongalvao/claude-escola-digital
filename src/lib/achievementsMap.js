@@ -71,6 +71,14 @@ export const ACHIEVEMENT_BY_MODULE_TITLE = {
   'Resolução de Conflitos': ['pacificador'],
   'Vivendo em Comunidade': ['vizinho_exemplar'],
   'Identificando Problemas e Propondo Soluções': ['agente_de_mudanca'],
+  'Dinheiro e Matemática': ['calculista_do_dinheiro'],
+  'Porcentagem no Dia a Dia': ['mestre_da_porcentagem'],
+  'Medidas: Do Tamanho ao Peso': ['medidor_experiente'],
+  'Tempo: Calculando Duração e Horários': ['cronometrista'],
+  'Distância e Velocidade': ['navegador_de_distancias'],
+  'Gráficos: Lendo Informações Visuais': ['leitor_de_graficos'],
+  'Probabilidade: Qual a Chance?': ['estatistico_iniciante'],
+  'Planejando com Números: Minha Viagem': ['planejador_de_viagem'],
 }
 
 export const TOTAL_MODULES = 12
@@ -86,4 +94,5 @@ export const FINAL_ACHIEVEMENT_BY_COURSE_SLUG = {
   'criatividade-e-design': 'designer_criativo',
   'criacao-de-conteudo-digital': 'criador_de_conteudo',
   'cidadania-e-vida-em-sociedade': 'cidadao_consciente',
+  'matematica-na-vida-real': 'mestre_da_matematica',
 }
