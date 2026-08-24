@@ -55,6 +55,14 @@ export const ACHIEVEMENT_BY_MODULE_TITLE = {
   'Desenho: Ideias que Ganham Forma': ['desenhista'],
   'Identidade Visual e Logotipo': ['criador_de_marca'],
   'Criando um Cartaz': ['cartazista'],
+  'Storytelling: Contando Histórias que Prendem Atenção': ['mestre_do_storytelling'],
+  'Roteiro: Planejando Antes de Gravar': ['roteirista'],
+  'Enquadramento e Fotografia': ['fotografo_iniciante'],
+  'Áudio: O Som Também Conta a História': ['engenheiro_de_som'],
+  'Edição Básica: Dando Ritmo ao Conteúdo': ['editor_de_video'],
+  'Thumbnail e Legenda: A Primeira Impressão': ['mestre_da_thumbnail'],
+  'Direitos Autorais e Uso Responsável de Imagens': ['respeitador_de_direitos'],
+  'Publicando com Segurança': ['publicador_seguro'],
 }
 
 export const TOTAL_MODULES = 12
@@ -68,4 +76,5 @@ export const FINAL_ACHIEVEMENT_BY_COURSE_SLUG = {
   'inteligencia-artificial-para-criancas': 'jovem_especialista_ia',
   'programacao-para-criancas': 'pequeno_programador',
   'criatividade-e-design': 'designer_criativo',
+  'criacao-de-conteudo-digital': 'criador_de_conteudo',
 }

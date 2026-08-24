@@ -109,6 +109,21 @@ export const PROJECT_TEMPLATES = {
       { db: 'social_post_text', label: 'O que essa identidade visual comunica sobre mim', type: 'textarea', placeholder: 'Escreva sua reflexão final' },
     ],
   },
+  'criacao-de-conteudo-digital': {
+    emoji: '🎬',
+    title: 'Projeto Final: Meu Primeiro Vídeo Educativo',
+    subtitle: 'Você aprendeu roteiro, gravação e edição. Hora de planejar seu vídeo!',
+    showProfitCalc: false,
+    submitLabel: 'Concluir curso e gerar certificado 🎓',
+    fields: [
+      { db: 'business_name', label: 'Título do vídeo', type: 'text', placeholder: 'Ex: Como cuidar de uma horta em casa' },
+      { db: 'product_service', label: 'Roteiro resumido (o que você vai falar)', type: 'textarea', placeholder: 'Liste os pontos principais em ordem' },
+      { db: 'problem_solved', label: 'Que dúvida ou problema esse vídeo resolve', type: 'textarea', placeholder: 'Para quem é útil esse vídeo?' },
+      { db: 'marketing_strategy', label: 'Ideia de thumbnail e legenda', type: 'textarea', placeholder: 'Descreva a imagem de capa e o título' },
+      { db: 'service_approach', label: 'Como você vai garantir que imagens/sons usados são seus ou autorizados', type: 'textarea', placeholder: 'Descreva seu plano' },
+      { db: 'social_post_text', label: 'O que você aprendeu sobre publicar com segurança', type: 'textarea', placeholder: 'Escreva sua reflexão final' },
+    ],
+  },
 }
 
 export const DEFAULT_TEMPLATE = PROJECT_TEMPLATES['educacao-financeira-empreendedorismo']
