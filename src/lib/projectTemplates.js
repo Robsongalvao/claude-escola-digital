@@ -124,6 +124,21 @@ export const PROJECT_TEMPLATES = {
       { db: 'social_post_text', label: 'O que você aprendeu sobre publicar com segurança', type: 'textarea', placeholder: 'Escreva sua reflexão final' },
     ],
   },
+  'cidadania-e-vida-em-sociedade': {
+    emoji: '🌎',
+    title: 'Projeto Final: Uma Solução para Minha Comunidade',
+    subtitle: 'Você aprendeu sobre respeito, direitos e convivência. Hora de propor uma mudança real!',
+    showProfitCalc: false,
+    submitLabel: 'Concluir curso e gerar certificado 🎓',
+    fields: [
+      { db: 'business_name', label: 'Problema identificado na sua comunidade', type: 'text', placeholder: 'Ex: Lixo acumulado na praça do bairro' },
+      { db: 'product_service', label: 'Quem é afetado por esse problema', type: 'textarea', placeholder: 'Descreva quem sente o impacto disso' },
+      { db: 'problem_solved', label: 'Solução proposta', type: 'textarea', placeholder: 'Descreva sua ideia de solução' },
+      { db: 'marketing_strategy', label: 'Como você comunicaria essa solução para outras pessoas', type: 'textarea', placeholder: 'Como você espalharia essa ideia?' },
+      { db: 'service_approach', label: 'Quem poderia ajudar a colocar isso em prática', type: 'textarea', placeholder: 'Vizinhos, escola, responsáveis...' },
+      { db: 'social_post_text', label: 'Por que isso importa para você', type: 'textarea', placeholder: 'Escreva sua reflexão final' },
+    ],
+  },
 }
 
 export const DEFAULT_TEMPLATE = PROJECT_TEMPLATES['educacao-financeira-empreendedorismo']

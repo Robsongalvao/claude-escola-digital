@@ -63,6 +63,14 @@ export const ACHIEVEMENT_BY_MODULE_TITLE = {
   'Thumbnail e Legenda: A Primeira Impressão': ['mestre_da_thumbnail'],
   'Direitos Autorais e Uso Responsável de Imagens': ['respeitador_de_direitos'],
   'Publicando com Segurança': ['publicador_seguro'],
+  'Respeito e Empatia': ['respeitoso'],
+  'Direitos e Deveres': ['conhecedor_de_direitos'],
+  'Regras: Por que Existem?': ['seguidor_consciente'],
+  'Cooperação: Trabalhando Juntos': ['cooperador'],
+  'Diversidade de Opiniões': ['mente_aberta'],
+  'Resolução de Conflitos': ['pacificador'],
+  'Vivendo em Comunidade': ['vizinho_exemplar'],
+  'Identificando Problemas e Propondo Soluções': ['agente_de_mudanca'],
 }
 
 export const TOTAL_MODULES = 12
@@ -77,4 +85,5 @@ export const FINAL_ACHIEVEMENT_BY_COURSE_SLUG = {
   'programacao-para-criancas': 'pequeno_programador',
   'criatividade-e-design': 'designer_criativo',
   'criacao-de-conteudo-digital': 'criador_de_conteudo',
+  'cidadania-e-vida-em-sociedade': 'cidadao_consciente',
 }
